@@ -1,32 +1,36 @@
 # complete-lastf
 
-一个zsh插件,进行文件名补全,比如将用户的`lastf`替换为当前目录最后一个修改的文件
+A zsh plugin that does filename completion. 
 
-## 效果图
+For example, it replaces the user's `lastf` with the last modified file in the current directory.
+
+[中文版](./README.zh.md)
+
+## Demo
 
 ![插件使用效果](./demo.gif)
 
-## 功能
+## Features
 
-暂时约定 **最后一个文件** 特指当前目录最后一个被编辑的文件
+The **last file** is specifically the last modified file in the current directory.
 
-1. `lastfN`替换为最后N个文件
+1. Replace `lastfN` with the last N files.
 
-   比如`lastf2`替换为最后2个文件
+   For example, `lastf2` replaces with the last 2 files.
 
-   没有N即`lastf`时默认1
+   If `N` is not provided, like in `lastf`, it defaults to 1.
 
-2. `lastdN`替换为最后N个文件夹
+2. Replace `lastdN` with the last N directories.
 
-## 依赖
+## Dependencies
 
-- [eza](https://github.com/eza-community/eza) `ls`的现代替代.`-D`参数可以仅仅列出文件夹,而`ls`较为困难
+- [eza](https://github.com/eza-community/eza): A modern replacement for `ls`. The `-D` option lists only directories, which is difficult with `ls`.
 
-## 安装
+## Installation
 
-1. 克隆仓库到 `~/.oh-my-zsh/custom/plugins/complete-lastf`
+1. Clone the repository to `~/.oh-my-zsh/custom/plugins/complete-lastf`.
 
-2. 在`~/.zshrc`文件中写
+2. Add the following line to your `~/.zshrc`:
 
    ```shell
    plugins=(...  complete-lastf)
