@@ -24,7 +24,11 @@ The **last file** is specifically the last modified file in the current director
 
 ## Dependencies
 
-- [eza](https://github.com/eza-community/eza): A modern replacement for `ls`. The `-D` option lists only directories, which is difficult with `ls`.
+- ~~[eza](https://github.com/eza-community/eza): A modern replacement for `ls`. The `-D` option lists only directories, which is difficult with `ls`.~~
+
+  **Note**: This plugin now uses zsh built-in glob patterns instead of external commands for better reliability.
+
+  **Important**: eza version 0.23.0 and later has compatibility issues in certain execution environments (such as zsh widget contexts). This plugin switched to zsh built-in glob patterns to avoid dependency on external commands.
 
 ## Installation
 

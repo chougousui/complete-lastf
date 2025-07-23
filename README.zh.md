@@ -20,7 +20,11 @@
 
 ## 依赖
 
-- [eza](https://github.com/eza-community/eza) `ls`的现代替代.`-D`参数可以仅仅列出文件夹,而`ls`较为困难
+- ~~[eza](https://github.com/eza-community/eza) `ls`的现代替代.`-D`参数可以仅仅列出文件夹,而`ls`较为困难~~
+
+  **注意**: 此插件现在使用zsh内置的glob模式而不是外部命令，以获得更好的可靠性。
+
+  **重要**: eza 0.23.0及以后版本在特定执行环境中（如zsh widget上下文）存在兼容性问题。此插件已切换到zsh内置的glob模式以避免对外部命令的依赖。
 
 ## 安装
 

@@ -10,8 +10,11 @@ _autocomplete_lastf() {
         local num_files=${match[1]:-1}
 
         # Get the last modified num_files files, separated by spaces
-        # local last_file=$(\ls -1th -b | head -n1)
-        local last_files=$(eza -1 -f --sort=modified --reverse | head -n $num_files | paste -sd ' ')
+        #local last_file=$(\ls -1th -b | head -n1)
+        #local last_files=$(/usr/bin/eza -1 -f --sort=modified --reverse | head -n $num_files | paste -sd ' ')
+        # Use zsh glob to get files only, sorted by modification time
+        local files=(*(om.[1,$num_files]))
+        local last_files="${files[*]}"
 
         # Replace 'lastfN' with the list of the last modified files
         BUFFER="${BUFFER%$last_arg}${last_files}"
@@ -25,7 +28,11 @@ _autocomplete_lastf() {
         local num_dirs=${match[1]:-1}
 
         # Get the last modified num_dirs directories, separated by spaces
-        local last_dirs=$(eza -1 -D --sort=modified --reverse | head -n $num_dirs | paste -sd ' ')
+        #local last_dirs=$(/usr/bin/eza -1 -D --sort=modified --reverse | head -n $num_dirs | paste -sd ' ')
+
+        # Use zsh glob to get directories only, sorted by modification time
+        local dirs=(*(om/[1,$num_dirs]))
+        local last_dirs="${dirs[*]}"
 
         # Replace 'lastdN' with the list of the last modified directories
         BUFFER="${BUFFER%$last_arg}${last_dirs}"
